@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Calendário de Cardápio</title>
+</head>
+<header>
+  <img class="img" src="static/Captura_de_tela_2025-04-29_152415-removebg-preview (1).png" alt="Logo">
+ 
+</header>
+<body>
+   <button class="edit-button" onclick="abrirEditor()">Editar Cardápio</button>
+  <div class="container">
+    <h1>Cardápio Semanal</h1>
+    <div class="selector">
+      <button id="btnNormal" class="active">Simples</button>
+      <button id="btnVegano">Vegano</button>
+    </div>
+    <div class="week" id="week"></div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="diaModal"></h2>
+      <p id="nutricao"></p>
+      <div class="rating">
+        <label for="avaliacao">Avalie esse prato:</label><br/>
+        <select id="avaliacao">
+          <option value="1">1 - Ruim</option>
+          <option value="2">2 - Regular</option>
+          <option value="3">3 - Bom</option>
+          <option value="4">4 - Muito bom</option>
+          <option value="5">5 - Excelente</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharEditor()">&times;</span>
+      <h2>Editar Cardápio</h2>
+      <form class="edit-form" id="editForm"></form>
+      <button type="button" onclick="salvarEdicao()">Salvar</button>
+    </div>
+  </div>
+</body>
+</html>
